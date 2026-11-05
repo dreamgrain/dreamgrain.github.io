@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" type="image/png" href="misc/favicon.svg">
+<meta charset="utf-8">
+<title>DreamGrain Photography</title>
+<meta name="author" content="Exin">
+<meta name="description" content="A small gallery of photos.">
+<style>
+  html,body {
+    height: 100%;
+    margin: 0;
+    font-family: "Trebuchet MS", Verdana, Arial, sans-serif;
+    background: linear-gradient(#cfd1de, #a3a0c0);
+    color: #222233;
+    font-size: 14px;
+  }
+
+  #wrapper {
+    width: 820px;
+    margin: 30px auto;
+    background: #fefefe;
+    border: 1px solid #8f90a0;
+    box-shadow: 0 0 12px rgba(20,20,50,0.2);
+  }
+
+  header {
+    padding: 18px 20px;
+    background: linear-gradient(#d1d2e4, #a9aacf);
+    border-bottom: 1px solid #8889a2;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: 27px;
+    letter-spacing: -0.4px;
+    color: #2a2a3f;
+    text-shadow: 0 1px 0 #e0e0f5;
+  }
+
+  nav {
+    padding: 10px 20px;
+    background: linear-gradient(#bfc0d9, #9aa0c2);
+    border-bottom: 1px solid #7f80a0;
+    font-size: 13px;
+  }
+
+  nav a {
+    color: #2e3380;
+    text-decoration: none;
+    margin-right: 16px;
+  }
+
+  nav a:hover {
+    text-decoration: underline;
+    color: #1f2460;
+  }
+
+  #content {
+    padding: 20px;
+  }
+
+  .thumb-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px 14px;
+  }
+
+  .thumb {
+    width: 150px;
+    text-align: center;
+    font-size: 12px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .thumb img {
+    display: block;
+    width: 150px;
+    height: 100px;
+    object-fit: cover;
+    border: 2px solid #c6c6dc;
+    background: #ebebf5;
+    box-shadow: 0 0 6px rgba(0,0,40,0.25);
+    cursor: pointer;
+  }
+
+  .caption {
+    margin-top: 6px;
+    color: #3b3b55;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .thumb:hover .caption {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .clear {
+    clear: both;
+    height: 1px;
+    overflow: hidden;
+  }
+
+  footer {
+    padding: 12px 20px;
+    font-size: 12px;
+    color: #5a5a70;
+    border-top: 1px solid #9b9bb3;
+    background: linear-gradient(#d4d5e5, #b8b9cc);
+    text-align: right;
+  }
+
+  #lightbox-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+
+  #lightbox-img {
+    max-width: 90%;
+    max-height: 90%;
+    box-shadow: 0 0 25px rgba(0,0,0,0.6);
+    border: 3px solid #fff;
+    transition: transform 0.3s ease;
+  }
+
+  #lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 32px;
+    color: #fff;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+  }
+
+  #lightbox-toggle {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    cursor: pointer;
+    z-index: 10000;
+  }
+
+  #lightbox-icon {
+    width: 28px;
+    height: 28px;
+    display: block;
+  }
+
+  #lightbox-overlay.shrunk #lightbox-img {
+    transform: scale(0.5) translateX(-70%);
+  }
+
+  #lightbox-info {
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 16px;
+    line-height: 1.4;
+    left: calc(50% + 200px);
+    right: 40px;
+    opacity: 0;
+    transition: opacity 0s ease 0s;
+  }
+
+  #lightbox-overlay.shrunk #lightbox-info {
+    opacity: 1;
+    transition-delay: 0.15s;
+  }
+
+  @media (max-width: 860px) {
+    #wrapper {
+      width: 96%;
+      margin: 12px auto;
+    }
+
+    .thumb-container {
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .thumb {
+      width: 30%;
+    }
+
+    .thumb img {
+      width: 100%;
+      height: auto;
+    }
+  }
+</style>
+</head>
+
+<body>
+
+<div id="wrapper">
+
+<header>
+  <h1><span style="color: #6488CF;">Dream</span><span style="color: #9563C5;">Grain</span></h1>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="photos.html">Photos</a>
+  <a href="blog.html">Blog</a>
+  <a href="contact.html">Contact</a>
+  <a href="guestbook.html">Guest Book</a>
+</nav>
+
+<div id="content">
+
+<div class="thumb-container">
+
+  <div class="thumb">
+    <img src="thumbs/picnicth.JPG" alt="picnic-island" class="thumb-img" data-full="photos/picnic-island.JPG" data-desc="The boat dock on Kukagami Lake.">
+    <div class="caption">Tied Up</div>
+  </div>
+
+  <div class="thumb">
+    <img src="thumbs/unfamiliarth.JPG" alt="unfamiliar" class="thumb-img" data-full="photos/unfamiliar.JPG" data-desc="The English classroom after receiving its 4th coat of wax.">
+    <div class="caption">Sheen-17</div>
+  </div>
+
+  <div class="thumb">
+    <img src="thumbs/marzipanth.JPG" alt="Pancake" class="thumb-img" data-full="photos/marzipan.JPG" data-desc="Marzipan Cake resting in the sun room.">
+    <div class="caption">Mr. Cake</div>
+  </div>
+
+  <div class="thumb">
+    <img src="thumbs/cumulusth.JPG" alt="The clouds" class="thumb-img" data-full="photos/cumulus.JPG" data-desc="A typical afternoon sky.">
+    <div class="caption">A Sunny Day</div>
+  </div>
+
+  <div class="thumb">
+    <img src="thumbs/schoolth.JPG" alt="The school" class="thumb-img" data-full="photos/school.JPG" data-desc="The middle school hallway with a lovely lack of middle schoolers.">
+    <div class="caption">The Lockers</div>
+  </div>
+
+  <div class="thumb">
+    <img src="thumbs/parish-hallth.JPG" alt="parish hall" class="thumb-img" data-full="photos/parish-hall.JPG" data-desc="The Parish Hall prepared for an event.">
+    <div class="caption">Old Gym</div>
+  </div>
+
+  <div class="thumb">
+    <img src="thumbs/choirth.JPG" alt="The choir room" class="thumb-img" data-full="photos/choir.JPG" data-desc="The seldom-used back choir room.">
+    <div class="caption">The Choir Room</div>
+  </div>
+
+  <div class="thumb">
+    <img src="thumbs/swampth.JPG" alt="swamp marsh" class="thumb-img" data-full="photos/swamp.JPG" data-desc="A section of Swampland outside Kukagami Lake.">
+    <div class="caption">Marshfield</div>
+  </div>
+
+  <div class="thumb">
+    <img src="thumbs/maintenanceth.JPG" alt="Maintenance closet" class="thumb-img" data-full="photos/maintenance.JPG" data-desc="The disarray within the maintenance closet.">
+    <div class="caption">Maintenance</div>
+  </div>
+
+  <div class="thumb">
+    <img src="thumbs/girith.JPG" alt="Giri Room" class="thumb-img" data-full="photos/giri.JPG" data-desc="Morning sunshine in the Giri Room.">
+    <div class="caption">Giri</div>
+  </div>
+
+  <div class="thumb">
+    <img src="thumbs/atticth.JPG" alt="church attic" class="thumb-img" data-full="photos/attic.JPG" data-desc="The lonesome attic of the church.">
+    <div class="caption">HVAC</div>
+  </div>
+  
+  <div class="thumb">
+    <img src="thumbs/archth.JPG" alt="arch" class="thumb-img" data-full="photos/arch.JPG" data-desc="The iconic arch of the Parish Hall.">
+    <div class="caption">Under the Arch</div>
+  </div>
+  
+  <div class="thumb">
+    <img src="thumbs/toppledth.JPG" alt="toppled cabinets" class="thumb-img" data-full="photos/toppled.JPG" data-desc="The Marian Room's cabinets brought to the ground.">
+    <div class="caption">Toppled</div>
+  </div>
+  
+  <div class="thumb">
+    <img src="thumbs/serviceth.JPG" alt="food service window cut into brick" class="thumb-img" data-full="photos/service.JPG" data-desc="The long obstructed food service window in the Giri room.">
+    <div class="caption">Food Service</div>
+  </div>
+  
+  <div class="thumb">
+    <img src="thumbs/officeth.JPG" alt="empty office" class="thumb-img" data-full="photos/office.JPG" data-desc="The office turned storage closet after being completely emptied.">
+    <div class="caption">Emptied</div>
+  </div>
+  
+  <div class="thumb">
+    <img src="thumbs/closetth.JPG" alt="storage closet" class="thumb-img" data-full="photos/closet.JPG" data-desc="The left storage closet with it's perpetually locked exterior door.">
+    <div class="caption">Closet</div>
+  </div>
+  
+  <div class="thumb">
+    <img src="thumbs/kitchenth.JPG" alt="kitchen" class="thumb-img" data-full="photos/kitchen.JPG" data-desc="The entrance to the kitchen.">
+    <div class="caption">Kitchen</div>
+  </div>
+  
+  <div class="thumb">
+    <img src="thumbs/girilessth.JPG" alt="the giri room stripped down" class="thumb-img" data-full="photos/giriless.JPG" data-desc="The Giri Room stripped of most of its contents. (Aside from some desks temporarily stored there)">
+    <div class="caption">Giriless</div>
+  </div>
+  
+  <div class="thumb">
+    <img src="thumbs/budth.JPG" alt="bud light" class="thumb-img" data-full="photos/bud.JPG" data-desc="A singular Bud Light.">
+    <div class="caption">Bud</div>
+  </div>
+  
+</div>
+
+<hr style="border:none; border-top:1px dashed #9b9bb0; margin: 22px 0;">
+
+<section>
+  <p style="margin:6px 0 0 0;">
+    All photos were taken on the
+    <a href="https://global.canon/en/c-museum/product/dcc487.html" target="_blank" rel="noopener">
+      Canon Powershot SD100
+    </a>
+  </p>
+</section>
+
+</div>
+
+<footer>
+  &copy; <span id="year"></span>
+</footer>
+
+</div>
+
+<div id="lightbox-overlay">
+  <span id="lightbox-close">&times;</span>
+
+  <span id="lightbox-toggle">
+    <img src="misc/info.png" id="lightbox-icon">
+  </span>
+
+  <img id="lightbox-img" src="" alt="Full Size">
+  <div id="lightbox-info"></div>
+</div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const thumbs = document.querySelectorAll('.thumb-img');
+  const lightbox = document.getElementById('lightbox-overlay');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const closeBtn = document.getElementById('lightbox-close');
+  const toggleBtn = document.getElementById('lightbox-toggle');
+  const infoBox = document.getElementById('lightbox-info');
+  let shrunk = false;
+
+  thumbs.forEach(thumb => {
+    thumb.addEventListener('click', () => {
+      lightboxImg.src = thumb.dataset.full;
+      infoBox.textContent = thumb.dataset.desc || '';
+      shrunk = false;
+      lightbox.classList.remove('shrunk');
+      lightbox.style.display = 'flex';
+    });
+  });
+
+  closeBtn.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+    lightboxImg.src = '';
+  });
+
+  lightbox.addEventListener('click', e => {
+    if (e.target === lightbox) {
+      lightbox.style.display = 'none';
+      lightboxImg.src = '';
+    }
+  });
+
+  toggleBtn.addEventListener('click', () => {
+    shrunk = !shrunk;
+    if (shrunk) {
+      lightbox.classList.add('shrunk');
+    } else {
+      lightbox.classList.remove('shrunk');
+    }
+  });
+</script>
+
+</body>
+</html>
