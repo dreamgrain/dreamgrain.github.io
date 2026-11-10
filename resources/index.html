@@ -1,0 +1,413 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" type="image/png" href="/misc/favicon.png">
+  <title>DreamGrain - Suggestions</title>
+  <meta name="author" content="Exin">
+  <meta name="description" content="Resources">
+
+  <style>
+    html {
+      min-height: 100%;
+      background: linear-gradient(to bottom, #cfd1de, #a3a0c0);
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      font-family: "Trebuchet MS", Verdana, Arial, sans-serif;
+      background: transparent;
+      color: #222233;
+      font-size: 14px;
+    }
+
+    #wrapper {
+      width: 820px;
+      min-height: calc(100vh - 62px);
+      margin: 30px auto;
+      background: #fefefe;
+      border: 1px solid #8f90a0;
+      box-shadow: 0 0 12px rgba(20,20,50,0.2);
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      padding: 18px 20px;
+      background: linear-gradient(#d1d2e4, #a9aacf);
+      border-bottom: 1px solid #8889a2;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 27px;
+      letter-spacing: -0.4px;
+      color: #2a2a3f;
+      text-shadow: 0 1px 0 #e0e0f5;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    h1 img {
+      height: 40px;
+      margin-left: 0px;
+      display: inline-block;
+    }
+
+    nav {
+      padding: 10px 20px;
+      background: linear-gradient(#bfc0d9, #9aa0c2);
+      border-bottom: 1px solid #7f80a0;
+      font-size: 13px;
+    }
+
+    nav a {
+      color: #2e3380;
+      text-decoration: none;
+      margin-right: 16px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+      color: #1f2460;
+    }
+
+    #content {
+      padding: 20px;
+      line-height: 1.55;
+      color: #222233;
+      flex: 1;
+    }
+
+    h2 {
+      margin-top: 0;
+      font-size: 19px;
+      color: #2a2a3f;
+      text-shadow: 0 1px 0 #e0e0f5;
+    }
+
+    p {
+      margin: 12px 0;
+      color: #33334a;
+    }
+
+    /* Suggestions masonry layout */
+
+    .suggestion-grid {
+      columns: 2;
+      column-gap: 14px;
+      margin-top: 20px;
+      display: flow-root;
+    }
+
+    .suggestion-column {
+      display: inline-block;
+      width: 100%;
+      box-sizing: border-box;
+      background: #f3f3f9;
+      border: 1px solid #c1c1d3;
+      padding: 14px;
+      margin-bottom: 14px;
+      break-inside: avoid;
+    }
+
+    .suggestion-column h3 {
+      margin: 0 0 12px 0;
+      padding-bottom: 7px;
+      font-size: 16px;
+      color: #555b9b;
+      border-bottom: 1px solid #c4c4d8;
+    }
+
+    .suggestion-column ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .suggestion-column li {
+      margin-bottom: 15px;
+      padding-bottom: 10px;
+      border-bottom: 1px dotted #c4c4d8;
+    }
+
+    .suggestion-column li:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .suggestion-column a {
+      color: #555b9b;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .suggestion-column a:hover {
+      text-decoration: underline;
+    }
+
+    /* Description underneath each recommendation */
+
+    .description {
+      margin-top: 4px;
+      font-size: 11px;
+      line-height: 1.5;
+      color: #68687e;
+      font-weight: normal;
+    }
+
+    .note {
+      margin-top: 20px;
+      padding: 10px 12px;
+      background: #eeeeF7;
+      border-left: 3px solid #9563C5;
+      color: #55556d;
+      font-size: 13px;
+    }
+
+    footer {
+      padding: 12px 20px;
+      font-size: 12px;
+      color: #5a5a70;
+      border-top: 1px solid #9b9bb3;
+      background: linear-gradient(#d4d5e5, #b8b9cc);
+      text-align: right;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 860px) {
+      #wrapper {
+        width: 96%;
+        margin: 12px auto;
+        min-height: calc(100vh - 26px);
+      }
+    }
+
+    @media (max-width: 550px) {
+      .suggestion-grid {
+        columns: 1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="wrapper">
+
+    <header>
+      <h1>
+        <span style="color: #6488CF;">Dream</span><span style="color: #9563C5;">Grain</span>
+      </h1>
+    </header>
+
+    <nav>
+      <a href="/">Home</a>
+      <a href="/about/">About</a>
+      <a href="/photos/">Photos</a>
+      <a href="/blog/">Blog</a>
+      <a href="/resources/">Resources</a>
+      <a href="/guestbook/">Guest Book</a>
+    </nav>
+
+    <div id="content">
+
+      <h2>Resources</h2>
+
+      <div class="suggestion-grid">
+
+        <div class="suggestion-column">
+          <h3>YouTube Channels</h3>
+          <ul>
+            <li>
+              <a href="https://www.youtube.com/@2swag.productions">2swag</a>
+              <div class="description">
+                Young guy known only by "2swag" who travels around the world exploring abandoned places with his friends.
+              </div>
+            </li>
+
+            <li>
+              <a href="https://www.youtube.com/@baldandbankrupt">Bald and Bankrupt</a>
+              <div class="description">
+                Benjamin Rich, a middle aged british man, takes a camera with him to every corner of the world showing the good, the bad, and the soviet.
+              </div>
+            </li>
+            
+            <li>
+              <a href="https://www.youtube.com/@BasicLogicIQ">Basic Logic</a>
+              <div class="description">
+                A channel dedicated to bringing clarity to a lot of political, social, and religious topics.
+              </div>
+            </li>
+            
+            <li>
+              <a href="https://www.youtube.com/@RyanHallYall">Ryan Hall Y'all</a>
+              <div class="description">
+                Amateur meteorologist Ryan Hall does semi-regular reports on the weather in the United States.
+              </div>
+            </li>
+            
+            <li>
+              <a href="https://www.youtube.com/@Denshi/videos">Denshi</a>
+              <div class="description">
+                A young Italian-born guy who talks about Catholicism and Linux, creates music, and hosts his own website.
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="suggestion-column">
+          <h3>Books</h3>
+          <ul>
+            <li>
+              <a href="https://grahamhancock.com/fingerprints/">Fingerprints of the Gods - Graham Hancock</a>
+              <div class="description">
+                A book that seeks to explain the more mysterious parts of our planet's history by hypothesizing that there may have been a civilization that thrived on our planet long before we are currently aware.
+              </div>
+            </li>
+
+            <li>
+              <a href="https://www.scotthahn.com/resources-1/2016/1/14/the-lambs-supper">The Lamb's Supper - Dr. Scott Hahn</a>
+              <div class="description">
+                A former protestant explains how he discovered the sacrifice of the Mass and how it relates to the book of Revelation.
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="suggestion-column">
+          <h3>Music</h3>
+          <ul>
+            <li>
+              <a href="https://www.youtube.com/watch?v=t49ooq3g7kM">Pas de Deux - Pyotr Ilyich Tchaikovsky</a>
+              <div class="description">
+                A classical piece of music from the ballet "The Nutcracker". This is a rendition composed for the piano performed by Sophia Liu. 
+              </div>
+            </li>
+
+            <li>
+              <a href="https://en.wikipedia.org/wiki/Three_Cheers_for_Sweet_Revenge">Three Cheers for Sweet Revenge - My Chemical Romance</a>
+              <div class="description">
+                An early 2000s concept album / rock opera that seems to tell the story of a man grief-stricken by the death of his wife and what he may be willing to do to bring her back.
+              </div>
+            </li>
+            
+            <li>
+              <a href="https://www.youtube.com/watch?v=w15oWDh02K4">L'amour Toujours - Gigi D'agostino</a>
+              <div class="description">
+                A Europop song that has gotten really popular among right-wing groups on the internet. It's pretty motivational. I listen to it when I run.
+              </div>
+            </li>
+            
+            <li>
+              <a href="https://www.youtube.com/@Maebi">Maebi</a>
+              <div class="description">
+                Online musician who creates unsettling, but strangely appealing music.
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="suggestion-column">
+          <h3>Websites</h3>
+          <ul>
+            <li>
+              <a href="https://fisheaters.com/">Fish Eaters</a>
+              <div class="description">
+                A simple website dedicated to everything Catholic.
+              </div>
+            </li>
+            
+            <li>
+              <a href="https://fmhy.net/">Free Media Heck Yeah!</a>
+              <div class="description">
+                A massive community-maintained directory of free content.
+              </div>
+            </li>
+
+            <li>
+              <a href="https://wiby.me">Wiby</a>
+              <div class="description">
+                A search engine that indexes simple HTML websites for casual web-browsing.
+              </div>
+            </li>
+            
+            <li>
+              <a href="https://kamtape.com">KamTape</a>
+              <div class="description">
+                A video sharing service that aims to bring back the functionality of early YouTube.
+              </div>
+            </li>
+            
+            <li>
+              <a href="https://gifcities.org">Gif Cities</a>
+              <div class="description">
+                A website that allows you to search through gifs in archived geocities websites.
+              </div>
+            </li>
+            
+          </ul>
+        </div>
+      
+        <div class="suggestion-column">
+          <h3>Programs</h3>
+          <ul>
+            <li>
+              <a href="https://supercellwx.net/">Supercell WX</a>
+              <div class="description">
+                A free open-source weather radar.
+              </div>
+            </li>
+            
+            <li>
+              <a href="https://grandperspectiv.sourceforge.net/">Grand Perspective</a>
+              <div class="description">
+                A free macOS utility that creates a graphical representation of your disk for easy file management.
+              </div>
+            </li>
+
+            <li>
+              <a href="https://jdownloader.org/home/index">JDownloader2</a>
+              <div class="description">
+                A free open-source download manager that can download media from many different websites.
+              </div>
+            </li>
+            
+            <li>
+              <a href="https://www.slsknet.org/news/">SoulSeek</a>
+              <div class="description">
+                A peer-to-peer music sharing client.
+              </div>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="suggestion-column">
+          <h3>Games</h3>
+          <ul>
+          
+            <li>
+              <a href="https://tetr.io">Tetr.io</a>
+              <div class="description">
+                A competitive Tetris clone.
+              </div>
+            </li>
+            
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+
+    <footer>
+    </footer>
+
+  </div>
+</body>
+</html>
