@@ -7,18 +7,20 @@
   <meta name="author" content="Exin">
   <meta name="description" content="Guestbook">
   <style>
-    html,body {
-      height: 100%;
+    html {
+      min-height: 100%;
+      background: linear-gradient(to bottom, #cfd1de, #a3a0c0);
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+    }
+
+    body {
+      min-height: 100vh;
       margin: 0;
       font-family: "Trebuchet MS", Verdana, Arial, sans-serif;
+      background: transparent;
       color: #222233;
       font-size: 14px;
-      background: repeating-linear-gradient(
-        to bottom,
-        #cfd1de 0px,
-        #a3a0c0 600px,
-        #cfd1de 1200px
-      );
     }
 
     #wrapper {
@@ -63,6 +65,7 @@
       text-decoration: none;
       margin-right: 16px;
     }
+
     nav a:hover {
       text-decoration: underline;
       color: #1f2460;
