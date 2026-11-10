@@ -57,6 +57,10 @@
     transform-origin: center;
   }
 
+  h1.rainbow span {
+    animation: rainbow 0.15s linear infinite;
+  }
+
   .subtitle {
     margin-top: 8px;
     font-size: 13px;
@@ -123,6 +127,16 @@
     0%   { transform: scale(1); }
     50%  { transform: scale(1.06); }
     100% { transform: scale(1); }
+  }
+
+  @keyframes rainbow {
+    0%   { color: red; }
+    17%  { color: orange; }
+    33%  { color: yellow; }
+    50%  { color: lime; }
+    67%  { color: cyan; }
+    83%  { color: blue; }
+    100% { color: magenta; }
   }
 </style>
 </head>
@@ -201,6 +215,19 @@
   const subtitleElement = document.getElementById("subtitle");
   const randomIndex = Math.floor(Math.random() * subtitles.length);
   subtitleElement.textContent = subtitles[randomIndex];
+
+  let typed = "";
+
+  document.addEventListener("keydown", function(event) {
+    if (event.key.length !== 1) return;
+
+    typed += event.key.toLowerCase();
+    typed = typed.slice(-10);
+
+    if (typed === "dreamgrain") {
+      document.querySelector("h1").classList.add("rainbow");
+    }
+  });
 </script>
 </body>
 </html>
