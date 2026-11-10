@@ -8,17 +8,20 @@
   <meta name="description" content="DreamGrain Photography Blog">
 
   <style>
-    html, body {
+    html {
+      min-height: 100%;
+      background: linear-gradient(to bottom, #cfd1de, #a3a0c0);
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+    }
+
+    body {
+      min-height: 100vh;
       margin: 0;
       font-family: "Trebuchet MS", Verdana, Arial, sans-serif;
       color: #222233;
       font-size: 14px;
-      background: repeating-linear-gradient(
-        to bottom,
-        #cfd1de 0px,
-        #a3a0c0 600px,
-        #cfd1de 1200px
-      );
+      background: transparent;
     }
 
     #wrapper {
@@ -98,10 +101,9 @@
       color: #33334a;
     }
 
-  
     .post-media {
       float: left;
-      width: 200px;                
+      width: 200px;
       margin: 4px 16px 12px 0;
       border: 1px solid #b5b6cc;
       background: #ffffff;
@@ -110,7 +112,7 @@
 
     .post-media img {
       display: block;
-      width: 200px;                 
+      width: 200px;
       height: auto;
       border-bottom: 1px solid #b5b6cc;
     }
@@ -145,7 +147,7 @@
         margin: 12px auto;
       }
     }
-  </style>
+</style>
 </head>
 
 <body>
