@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,46 +8,22 @@
 <meta name="description" content="home">
 
 <style>
-  html, body {
-    height: 100%;
-    margin: 0;
-    font-family: "Trebuchet MS", Verdana, Arial, sans-serif;
-    background: linear-gradient(#cfd1de, #a3a0c0);
-    color: #222233;
-    font-size: 14px;
+  html {
+    min-height: 100%;
+    background: linear-gradient(to bottom, #cfd1de, #a3a0c0);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
   }
 
   body {
+    min-height: 100vh;
+    margin: 0;
+    font-family: "Trebuchet MS", Verdana, Arial, sans-serif;
+    background: transparent;
+    color: #222233;
+    font-size: 14px;
     position: relative;
     overflow-x: hidden;
-  }
-
-  /* Falling DreamGrain background */
-  #background-rain {
-    position: fixed;
-    inset: 0;
-    overflow: hidden;
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  .rain-text {
-    position: absolute;
-    top: -100px;
-    color: rgba(105, 76, 155, 0.22);
-    font-size: 19px;
-    font-weight: bold;
-    white-space: nowrap;
-    animation: fallingText linear infinite;
-  }
-
-  @keyframes fallingText {
-    from {
-      transform: translateY(-100px);
-    }
-    to {
-      transform: translateY(110vh);
-    }
   }
 
   #wrapper {
@@ -158,16 +133,6 @@
 
 <body>
 
-<!-- Background falling text -->
-<div id="background-rain">
-  <div class="rain-text" style="left: 5%; animation-duration: 18s; animation-delay: -8s;">DreamGrain</div>
-  <div class="rain-text" style="left: 20%; animation-duration: 24s; animation-delay: -15s;">DreamGrain</div>
-  <div class="rain-text" style="left: 38%; animation-duration: 20s; animation-delay: -4s;">DreamGrain</div>
-  <div class="rain-text" style="left: 55%; animation-duration: 26s; animation-delay: -19s;">DreamGrain</div>
-  <div class="rain-text" style="left: 72%; animation-duration: 22s; animation-delay: -11s;">DreamGrain</div>
-  <div class="rain-text" style="left: 88%; animation-duration: 19s; animation-delay: -6s;">DreamGrain</div>
-</div>
-
 <div id="wrapper">
 
   <header>
@@ -234,7 +199,6 @@
     "Deus vult.",
     "I still believe in your eyes.",
     "How's ya motha?",
-    "Better than I deserve.",
   ];
 
   const subtitleElement = document.getElementById("subtitle");
